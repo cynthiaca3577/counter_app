@@ -181,16 +181,20 @@ class Counter extends ChangeNotifier {
     if (decrementcontroller.text.trim().isEmpty) {
       if (yesorno) {
         number--;
-      } else {}
+      } else {
+        if (number > 0) {
+          number--;
+        }
+      }
     } else {
       if (yesorno) {
         // If yes, allow decrementing below 0
         number -= double.parse(decrementcontroller.text);
       } else {
         // If no, prevent decrementing below 0
-        // if (number > 0) {
-        //   number--;
-        // }
+        if (number > 0) {
+          number--;
+        }
       }
     }
 
